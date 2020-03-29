@@ -8,9 +8,13 @@
         "preserveConstEnums": true,
         "removeComments": true,
         "sourceMap": true,
-        "target": "ES5"
+        "target": "ES5",
+        "lib": [
+            "ES6",
+            "DOM"
+        ]
     },
     "include": [
-        "./src/*", "src/hello-world/HelloWorld.tsx"
+        "./src/*"
     ]
 }
