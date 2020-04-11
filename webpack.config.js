@@ -1,7 +1,10 @@
 /* eslint-disable no-var-requires */
 const path = require('path'),
     webpack = require('webpack'),
-    HtmlWebPackPlugin = require('html-webpack-plugin')
+    HtmlWebPackPlugin = require('html-webpack-plugin'),
+    MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+// const isDevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
     entry: {
@@ -14,7 +17,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.scss'],
     },
     module: {
         rules: [
@@ -23,6 +26,15 @@ module.exports = {
                 loader: 'ts-loader',
             },
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+            {
+                test: /\.s(a|c)ss$/,
+                exclude: /\.module.s(c|a)ss$/,
+                loader: [
+                    true ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    { loader: 'sass-loader', options: { sourceMap: true } },
+                ],
+            },
         ],
     },
     plugins: [
@@ -30,5 +42,9 @@ module.exports = {
             template: path.resolve(__dirname, 'src', 'index.html'),
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin({
+            filename: true ? '[name].css' : '[name].[hash].css',
+            chunkFilename: true ? '[id].css' : '[id].[hash].css',
+        }),
     ],
 }
