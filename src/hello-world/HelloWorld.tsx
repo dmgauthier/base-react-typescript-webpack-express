@@ -1,4 +1,4 @@
-import './helloWorld'
+import '../style/entry'
 
 import * as React from 'react'
 

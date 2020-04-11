@@ -1,6 +1,6 @@
 {
     "name": "base-react-ts-app",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "A Base Built for a React Typescript Application.",
     "dependencies": {
         "express": "^4.17.1",
