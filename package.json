@@ -1,6 +1,6 @@
 {
     "name": "base-react-ts-app",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "A Base Built for a React Typescript Application.",
     "dependencies": {
         "express": "^4.17.1",
@@ -21,8 +21,8 @@
         "husky": "^4.2.3",
         "lint-staged": "^10.0.10",
         "mini-css-extract-plugin": "^0.9.0",
-        "node-sass": "^4.13.1",
         "prettier": "^2.0.2",
+        "sass": "^1.26.3",
         "sass-loader": "^8.0.2",
         "source-map-loader": "^0.2.4",
         "style-loader": "^1.1.3",
