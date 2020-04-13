@@ -2,9 +2,7 @@ import '../style/entry'
 
 import * as React from 'react'
 
-export const HelloWorld: React.FunctionComponent<{ greeting: string }> = ({
-    greeting,
-}) => (
+const HelloWorld: React.FunctionComponent<{ greeting: string }> = ({ greeting }) => (
     <div className="main">
         <div
             style={{
@@ -19,3 +17,5 @@ export const HelloWorld: React.FunctionComponent<{ greeting: string }> = ({
         </div>
     </div>
 )
+
+export default HelloWorld

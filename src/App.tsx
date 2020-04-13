@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
 
-import { HelloWorld } from './hello-world/HelloWorld'
+import HelloWorld from './hello-world/HelloWorld'
 
 // eslint-disable-next-line
 declare let module: any
